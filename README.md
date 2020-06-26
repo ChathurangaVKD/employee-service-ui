@@ -1,48 +1,46 @@
-# employee-service-api
+# employee servicce UI
 
-## Requirements
+This is a test project to demonstrate employee management using with Angular 8+. It contains,
+- Store, update, delete and retrieve employee data.
+- Store/Update employee data.
+- Assign/Change employee to department.
+- Assign/Change employee to supervisor, salary scale and office related detail.
+- Add/Update/Delete employee family member details.
 
-For building and running the application you need:
+## Get started
 
-- [JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-- [Maven 3](https://maven.apache.org)
-- [Mysql] (https://www.mysql.com/)
-- [postgresql] (https://www.postgresql.org/)
-- [Spring Boot] (https://spring.io/projects/spring-boot)
-- [Swagger] (https://swagger.io/)
-
-## Running the application locally
-
-There are several ways to run a Spring Boot application on your local machine. One way is to execute the `main` method in the `de.codecentric.springbootsample.Application` class from your IDE.
-
-Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html) like so:
+### Clone the repo
 
 ```shell
-mvn spring-boot:run
+git clone https://github.com/bryanforbes/intern-angular
+cd intern-angular
 ```
 
-## Deploying the application to Heroku
+### Install npm packages
 
-The easiest way to deploy the sample application to Heroku is to use the [Heroku CLI](https://dashboard.heroku.com/):
+Install the `npm` packages described in the `package.json` and verify that it works:
 
 ```shell
-oc new-app codecentric/springboot-maven3-centos~https://github.com/codecentric/springboot-sample-app
+npm install
+npm start
 ```
 
-This will create:
+The `npm start` command builds (compiles TypeScript and copies assets) the application into `dist/`, watches for changes to the source files, and runs `lite-server` on port `3000`.
 
-* An ImageStream called "springboot-maven3-centos"
-* An ImageStream called "springboot-sample-app"
-* A BuildConfig called "springboot-sample-app"
-* DeploymentConfig called "springboot-sample-app"
-* Service called "springboot-sample-app"
+Shut it down manually with `Ctrl-C`.
 
-If you want to access the app from outside your Heroku installation, you have to expose the springboot-sample-app service:
+#### npm scripts
 
-```shell
-oc expose springboot-sample-app --hostname=www.example.com
-```
+These are the most useful commands defined in `package.json`:
 
-## Copyright
+* `npm start` - runs the TypeScript compiler, asset copier, and a server at the same time, all three in "watch mode".
+* `npm run build` - runs the TypeScript compiler and asset copier once.
+* `npm run build:watch` - runs the TypeScript compiler and asset copier in "watch mode"; when changes occur to source files, they will be recompiled or copied into `dist/`.
+* `npm run lint` - runs `tslint` on the project files.
+* `npm run serve` - runs `lite-server`.
 
-Released under the Apache License 2.0. See the [LICENSE](https://github.com/codecentric/springboot-sample-app/blob/master/LICENSE) file.
+These are the test-related scripts:
+
+* `npm test` - builds the application and runs Intern tests (both unit and functional) one time.
+* `npm run ci` - cleans, lints, and builds the application and runs Intern tests (both unit and functional) one time.
+
