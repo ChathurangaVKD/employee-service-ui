@@ -36,11 +36,13 @@ export class DepartmentComponent implements OnInit {
       this.departmentService.update(id, this.selectedDepartment).subscribe(res => {
         console.log(res);
         alert('Department Update Success');
+        this.router.navigate(['department/' + res.id]);
       });
     } else {
       this.departmentService.create(this.selectedDepartment).subscribe(res => {
         console.log(res);
         alert('Department Create Success');
+        this.router.navigate(['department/' + res.id]);
       });
     }
   }

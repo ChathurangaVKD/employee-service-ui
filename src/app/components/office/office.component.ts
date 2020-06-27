@@ -40,11 +40,13 @@ export class OfficeComponent implements OnInit {
       this.officeService.update(id, this.selectedOffice).subscribe(res => {
         console.log(res);
         alert('Office Update Success');
+        this.router.navigate(['office/' + res.id]);
       });
     } else {
       this.officeService.create(this.selectedOffice).subscribe(res => {
         console.log(res);
         alert('Office Create Success');
+        this.router.navigate(['office/' + res.id]);
       });
     }
   }

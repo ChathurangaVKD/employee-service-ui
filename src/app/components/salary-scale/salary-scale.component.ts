@@ -37,11 +37,13 @@ export class SalaryScaleComponent implements OnInit {
       this.salaryScaleService.update(id, this.selectedSalaryScale).subscribe(res => {
         console.log(res);
         alert('SalaryScale Update Success');
+        this.router.navigate(['salary-scale/' + res.id]);
       });
     } else {
       this.salaryScaleService.create(this.selectedSalaryScale).subscribe(res => {
         console.log(res);
         alert('SalaryScale Create Success');
+        this.router.navigate(['salary-scale/' + res.id]);
       });
     }
   }

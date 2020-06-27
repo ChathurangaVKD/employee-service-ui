@@ -128,11 +128,13 @@ export class EmployeeComponent implements OnInit {
       this.employeeService.update(id, this.selectedEmployee).subscribe(res => {
         console.log(res);
         alert('Employee Update Success');
+        this.router.navigate(['employee/' + res.id]);
       });
     } else {
       this.employeeService.create(this.selectedEmployee).subscribe(res => {
         console.log(res);
         alert('Employee Create Success');
+        this.router.navigate(['employee/' + res.id]);
       });
     }
   }

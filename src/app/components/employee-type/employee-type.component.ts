@@ -38,11 +38,13 @@ export class EmployeeTypeComponent implements OnInit {
       this.employeeTypeService.update(id, this.selectedEmployeeType).subscribe(res => {
         console.log(res);
         alert('EmployeeType Update Success');
+        this.router.navigate(['employee-type/' + res.id]);
       });
     } else {
       this.employeeTypeService.create(this.selectedEmployeeType).subscribe(res => {
         console.log(res);
         alert('EmployeeType Create Success');
+        this.router.navigate(['employee-type/' + res.id]);
       });
     }
   }
