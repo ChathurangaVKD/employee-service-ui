@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  base_url : 'http://localhost:8088'
+  base_url : 'https://employee-service-api.herokuapp.com'
 };
