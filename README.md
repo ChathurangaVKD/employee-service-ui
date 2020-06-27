@@ -12,8 +12,7 @@ This is a test project to demonstrate employee management using with Angular 8+.
 ### Clone the repo
 
 ```shell
-git clone https://github.com/bryanforbes/intern-angular
-cd intern-angular
+git clone https://github.com/ChathurangaVKD/employee-service-ui.git
 ```
 
 ### Install npm packages
@@ -25,7 +24,7 @@ npm install
 npm start
 ```
 
-The `npm start` command builds (compiles TypeScript and copies assets) the application into `dist/`, watches for changes to the source files, and runs `lite-server` on port `3000`.
+The `npm start` command builds (compiles TypeScript and copies assets) the application into `dist/`, watches for changes to the source files, and runs `lite-server` on port `4200`.
 
 Shut it down manually with `Ctrl-C`.
 
@@ -35,12 +34,34 @@ These are the most useful commands defined in `package.json`:
 
 * `npm start` - runs the TypeScript compiler, asset copier, and a server at the same time, all three in "watch mode".
 * `npm run build` - runs the TypeScript compiler and asset copier once.
-* `npm run build:watch` - runs the TypeScript compiler and asset copier in "watch mode"; when changes occur to source files, they will be recompiled or copied into `dist/`.
 * `npm run lint` - runs `tslint` on the project files.
-* `npm run serve` - runs `lite-server`.
 
-These are the test-related scripts:
+## Tech Stack
 
-* `npm test` - builds the application and runs Intern tests (both unit and functional) one time.
-* `npm run ci` - cleans, lints, and builds the application and runs Intern tests (both unit and functional) one time.
+- Angular 9
+- Angular material UI
+- Express
+- NodeJs
+
+## Running the application locally
+
+There are several ways to run a Angular application on your local machine. 
+
+```shell
+ng serve
+```
+
+Also you can run as a node application
+
+```shell
+node server.js
+```
+
+## Deploying the application to Heroku
+
+The easiest way to deploy the sample application to Heroku is to use the [Heroku CLI](https://dashboard.heroku.com/):
+
+This will create and rest api:
+
+* Heroku App: employee-services https://employee-services.herokuapp.com/
 
