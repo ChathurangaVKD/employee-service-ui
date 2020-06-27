@@ -1,0 +1,68 @@
+<!-- Toolbar -->
+<mat-toolbar color="primary" class="header">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    Employee Dashboard
+    <span class="menu-spacer"></span>
+    <span style="flex: 1 1 auto;"></span>
+    <!-- <mat-icon>account_circle</mat-icon> -->
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <!-- Sidenav -->
+  <mat-sidenav #sidenav opened mode="side">
+    <mat-nav-list>
+      <a mat-list-item routerLinkActive="active" routerLink="add-employee">
+        <mat-icon>person_add</mat-icon>
+        Add Employee
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="employee-list">
+        <mat-icon>list</mat-icon>
+        View Employees
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="add-department">
+        <mat-icon>domain</mat-icon>
+        Add Department
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="department-list">
+        <mat-icon>list</mat-icon>
+        View Departments
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="add-office">
+        <mat-icon>home</mat-icon>
+        Add Office
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="office-list">
+        <mat-icon>list</mat-icon>
+        View Offices
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="add-employee-type">
+        <mat-icon>person</mat-icon>
+        Add Employee Type
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="employee-type-list">
+        <mat-icon>list</mat-icon>
+        View Employee Types
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="add-salary-scale">
+        <mat-icon>attach_money</mat-icon>
+        Add Salary Scale
+      </a>
+
+      <a mat-list-item routerLinkActive="active" routerLink="salary-scale-list">
+        <mat-icon>list</mat-icon>
+        View Salary Scales
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main content -->
+  <mat-sidenav-content>
+    <div style="height: 88vh;">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

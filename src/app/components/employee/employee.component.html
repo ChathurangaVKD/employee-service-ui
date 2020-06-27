@@ -1,0 +1,211 @@
+<div class="mat-elevation-z8">
+  <mat-card>
+    <mat-card-header>
+      <mat-label> Add Employee Details</mat-label>
+    </mat-card-header>
+    <div class="example-container">
+      <mat-form-field hintLabel="Max 50 characters" appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input matInput #input maxlength="50" placeholder="Ex. John"
+               [(ngModel)]="selectedEmployee.firstName">
+        <mat-hint align="end">{{input.value?.length || 0}}/50</mat-hint>
+      </mat-form-field>
+      <mat-form-field hintLabel="Max 50 characters" appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input matInput #input maxlength="50" placeholder="Ex. Anderson"
+               [(ngModel)]="selectedEmployee.lastName">
+        <mat-hint align="end">{{input.value?.length || 0}}/50</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="example-container">
+      <mat-form-field hintLabel="Max 50 characters" appearance="fill">
+        <mat-label>User Name</mat-label>
+        <input matInput #input maxlength="50" placeholder="Ex. iamuser"
+               [(ngModel)]="selectedEmployee.username">
+        <mat-hint align="end">{{input.value?.length || 0}}/50</mat-hint>
+      </mat-form-field>
+      <mat-form-field hintLabel="Max 50 characters" appearance="fill">
+        <mat-label>E-Mail</mat-label>
+        <input type="email" matInput #input maxlength="50" placeholder="Ex. sample@gmail.com"
+               [(ngModel)]="selectedEmployee.email">
+        <mat-hint align="end">{{input.value?.length || 0}}/50</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="example-container">
+      <mat-form-field hintLabel="Max 3 characters" appearance="fill">
+        <mat-label>Age</mat-label>
+        <input matInput #input type="number" maxlength="3" placeholder="Ex. 29"
+               [(ngModel)]="selectedEmployee.age">
+        <mat-hint align="end">{{input.value?.length || 0}}/3</mat-hint>
+      </mat-form-field>
+      <mat-form-field hintLabel="Max 10 characters" appearance="fill">
+        <mat-label>Mobile</mat-label>
+        <input matInput #input maxlength="10" type="number" placeholder="Ex. 715836026"
+               [(ngModel)]="selectedEmployee.mobile">
+        <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Type</mat-label>
+        <mat-select [(ngModel)]="selectedEmployee.type">
+          <mat-option *ngIf="selectedEmployee.type"
+                      [value]="selectedEmployee.type">{{selectedEmployee.type.name}}</mat-option>
+          <mat-option *ngFor="let employeeType of employeeTypes"
+                      [value]="employeeType">{{employeeType.name}}</mat-option>
+        </mat-select>
+        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+      </mat-form-field>
+    </div>
+  </mat-card>
+  <mat-card>
+    <mat-card-header>
+      <mat-label> Add Address Details</mat-label>
+    </mat-card-header>
+    <div class="example-container">
+      <mat-form-field hintLabel="Max 50 characters" appearance="fill">
+        <mat-label>No</mat-label>
+        <input matInput #input maxlength="50" placeholder="Ex. 29"
+               [(ngModel)]="selectedEmployee.address.no">
+        <mat-hint align="end">{{input.value?.length || 0}}/50</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field hintLabel="Max 50 characters" appearance="fill">
+        <mat-label>Lane 1</mat-label>
+        <input matInput #input maxlength="50" placeholder="Ex. Stewart Rd"
+               [(ngModel)]="selectedEmployee.address.lane1">
+        <mat-hint align="end">{{input.value?.length || 0}}/50</mat-hint>
+      </mat-form-field>
+      <mat-form-field hintLabel="Max 50 characters" appearance="fill">
+        <mat-label>Lane 2</mat-label>
+        <input matInput #input maxlength="50" placeholder="Ex. 2nd Lane"
+               [(ngModel)]="selectedEmployee.address.lane2">
+        <mat-hint align="end">{{input.value?.length || 0}}/50</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="example-container">
+      <mat-form-field hintLabel="Max 50 characters" appearance="fill">
+        <mat-label>City</mat-label>
+        <input matInput #input maxlength="50" placeholder="Ex. Colombo 7"
+               [(ngModel)]="selectedEmployee.address.city">
+        <mat-hint align="end">{{input.value?.length || 0}}/50</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field hintLabel="Max 10 characters" appearance="fill">
+        <mat-label>Postal/Zip Code</mat-label>
+        <input matInput #input maxlength="10" type="number" placeholder="Ex. 00100"
+               [(ngModel)]="selectedEmployee.address.postalCode">
+        <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+      </mat-form-field>
+      <mat-form-field hintLabel="Max 50 characters" appearance="fill">
+        <mat-label>Country</mat-label>
+        <input matInput #input maxlength="50" placeholder="Ex. Sri Lanka"
+               [(ngModel)]="selectedEmployee.address.country">
+        <mat-hint align="end">{{input.value?.length || 0}}/50</mat-hint>
+      </mat-form-field>
+    </div>
+  </mat-card>
+  <mat-card>
+    <mat-card-header>
+      <mat-label> Add Employment Details</mat-label>
+    </mat-card-header>
+    <div class="example-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Department</mat-label>
+        <mat-select [(ngModel)]="selectedEmployee.department">
+          <mat-option *ngIf="selectedEmployee.department"
+                      [value]="selectedEmployee.department">{{selectedEmployee.department.name}}</mat-option>
+          <mat-option *ngFor="let department of departments" [value]="department">{{department.name}}</mat-option>
+        </mat-select>
+        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Office</mat-label>
+        <mat-select [(ngModel)]="selectedEmployee.office">
+          <mat-option *ngIf="selectedEmployee.office"
+                      [value]="selectedEmployee.office">{{selectedEmployee.office.name}}</mat-option>
+          <mat-option *ngFor="let office of offices" [value]="office">{{office.name}}</mat-option>
+        </mat-select>
+        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Salary Scale</mat-label>
+        <mat-select [(ngModel)]="selectedEmployee.salaryScale">
+          <mat-option *ngIf="selectedEmployee.salaryScale"
+                      [value]="selectedEmployee.salaryScale">{{selectedEmployee.salaryScale.name}}</mat-option>
+          <mat-option *ngFor="let salaryScale of salaryScales" [value]="salaryScale">{{salaryScale.name}}</mat-option>
+        </mat-select>
+        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Supervisor</mat-label>
+        <mat-select [(ngModel)]="selectedEmployee.supervisor">
+          <mat-option *ngIf="selectedEmployee.supervisor"
+                      [value]="selectedEmployee.supervisor">{{selectedEmployee.supervisor.username}}</mat-option>
+          <mat-option *ngFor="let supervisor of supervisors" [value]="supervisor">{{supervisor.username}}</mat-option>
+        </mat-select>
+        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+      </mat-form-field>
+    </div>
+  </mat-card>
+  <mat-card>
+    <mat-card-header>
+      <mat-label> Add Family Details</mat-label>
+    </mat-card-header>
+    <div *ngIf="selectedEmployee.familyMembers && selectedEmployee.familyMembers.length > 0" class="example-container">
+      <table mat-table [dataSource]="selectedEmployee.familyMembers">
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name</th>
+          <td *matCellDef="let element" mat-cell> {{element.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="age">
+          <th mat-header-cell *matHeaderCellDef> Age</th>
+          <td *matCellDef="let element" mat-cell> {{element.age}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="relationShip">
+          <th mat-header-cell *matHeaderCellDef> Relationship</th>
+          <td *matCellDef="let element" mat-cell> {{element.relationShip}} </td>
+        </ng-container>
+        <ng-container  matColumnDef="delete">
+          <th mat-header-cell *matHeaderCellDef> Delete </th>
+          <td mat-cell *matCellDef="let row">
+            <button mat-icon-button color="warn" (click)="deleteMember(row.id)">
+              <mat-icon class="mat-18" color="primary">delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+      </table>
+    </div>
+    <div>
+      <div class="example-container">
+        <mat-form-field hintLabel="Max 50 characters" appearance="fill">
+          <mat-label>Name</mat-label>
+          <input [(ngModel)]="newFamilyMember.name" matInput #input maxlength="50" placeholder="Ex. Saman Silva">
+          <mat-hint align="end">{{input.value?.length || 0}}/50</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field hintLabel="Max 3 characters" appearance="fill">
+          <mat-label>Age</mat-label>
+          <input [(ngModel)]="newFamilyMember.age" type="number" matInput #input maxlength="3" placeholder="Ex. 30">
+          <mat-hint align="end">{{input.value?.length || 0}}/3</mat-hint>
+        </mat-form-field>
+        <mat-form-field hintLabel="Max 50 characters" appearance="fill">
+          <mat-label>RelationShip</mat-label>
+          <input [(ngModel)]="newFamilyMember.relationShip" matInput #input maxlength="50" placeholder="Ex. Son">
+          <mat-hint align="end">{{input.value?.length || 0}}/50</mat-hint>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="addFamilyMember()">Add</button>
+      </div>
+    </div>
+  </mat-card>
+  <mat-card>
+    <div class="example-button-row">
+      <mat-action-row>
+        <button mat-raised-button color="primary" (click)="save()">Save</button>
+        <button mat-raised-button color="primary" (click)="cancel()">Cancel</button>
+      </mat-action-row>
+    </div>
+  </mat-card>
+</div>
